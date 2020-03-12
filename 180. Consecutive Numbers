@@ -1,0 +1,6 @@
+Write a SQL query to find all numbers that appear at least three times consecutively.
+
+select distinct l1.Num as ConsecutiveNums 
+from Logs as l1
+join Logs as l2 on l1.id = l2.id - 1 and l1.Num = l2.Num
+join Logs as l3 on l1.id = l3.id - 2 and l1.Num = l3.Num;
